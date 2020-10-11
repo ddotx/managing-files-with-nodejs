@@ -4,6 +4,10 @@ const {promisify} = require('util');
 
 const readFile = promisify(fs.readFile);
 
+/* readFile("./data/pulitzer-circulation-data.csv", "utf8")
+.then(data => console.table(convertCsv(data)))
+.catch(err => console.log(`File error: ${err}`)) */
+
 const read = async () => {
     const data = await readFile("./data/pulitzer-circulation-data.csv", "utf8");
     console.table(convertCsv(data));
